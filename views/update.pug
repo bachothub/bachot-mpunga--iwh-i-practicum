@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Update Book Details
+  body
+    h1 Update Book Details
+
+    form(action="/update" method="POST")
+      input(type="hidden" name="hs_object_id" value=book.id)
+
+      label(for="book_name") Book Name:
+      input(type="text" name="book_name" id="book_name" value=book.properties.book_name required)
+      br
+
+      label(for="book_type") Book Type:
+      input(type="text" name="book_type" id="book_type" value=book.properties.book_type required)
+      br
+
+      label(for="author") Author:
+      input(type="text" name="author" id="author" value=book.properties.author required)
+      br
+
+      label(for="price") Price:
+      input(type="number" name="price" id="price" value=book.properties.price step="0.01" required)
+      br
+
+      button(type="submit") Update Book

@@ -1,0 +1,27 @@
+doctype html
+html 
+  head 
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body    
+    h1 #{title}
+    a(href="/create") Add New Book
+    table
+      thead
+        tr
+          th Book Name
+          th Book Type
+          th Author
+          th Price
+          th Actions
+      tbody
+        each book in books
+          tr
+            td 
+              a(href=`/update?id=${book.id}`) #{book.properties.book_name}
+            td #{book.properties.book_type}
+            td #{book.properties.author}
+            td #{book.properties.price}
+            td
+              a(href=`/update?id=${book.id}`) Edit

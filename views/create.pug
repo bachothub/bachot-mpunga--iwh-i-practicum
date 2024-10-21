@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Add New Book
+  body
+    h1 Add New Book
+
+    form(action="/create" method="POST")
+      label(for="book_name") Book Name:
+      input(type="text" name="book_name" id="book_name" required)
+      br
+
+      label(for="book_type") Book Type:
+      input(type="text" name="book_type" id="book_type" required)
+      br
+
+      label(for="author") Author:
+      input(type="text" name="author" id="author" required)
+      br
+
+      label(for="price") Price:
+      input(type="number" name="price" id="price" step="0.01" required)
+      br
+
+      button(type="submit") Add Book
